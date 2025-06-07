@@ -77,3 +77,53 @@ function borrarUltimo() {
         operacionActual = "";
     }
 }
+
+function calcular() {
+    try {
+        const expresion = pantalla.textContent;
+        
+        if (!expresion || expresion === "0") {
+            return;
+        }
+        
+        // Validar que la expresión este completa
+        if (esOperador(expresion.slice(-1))) {
+            pantalla.textContent = "Error";
+            return;
+        }
+        
+        // Usar eval para caracteres especiales
+        const expresionLimpia = expresion.replace(/×/g, '*').replace(/÷/g, '/');
+        
+        // Evaluar la expresión
+        let resultado = eval(expresionLimpia);
+        
+        // para devision por 0
+        if (!isFinite(resultado)) {
+            pantalla.textContent = "Error";
+            return;
+        }
+        
+        // Redondeo en caso de ser necesario
+        resultado = Math.round(resultado * 100000000) / 100000000;
+        
+        pantalla.textContent = resultado.toString();
+        operacionActual = resultado.toString();
+        reiniciarPantalla = true;
+        
+    } catch (error) {
+        pantalla.textContent = "Error";
+        reiniciarPantalla = true;
+    }
+}
+
+function esOperador(valor) {
+    return ['+', '-', '*', '/', '×', '÷'].includes(valor);
+}
+
+// Función adicional para mejorar la experiencia del usuario
+function validarExpresion(expresion) {
+    // Evitar operadores consecutivos
+    const operadores = /[\+\-\*\/]{2,}/;
+    return !operadores.test(expresion);
+}
