@@ -1,18 +1,23 @@
-# 🧮 Calculadora Web
+# 🎮 Colección de Juegos Web
 
+Una colección de juegos interactivos construidos con HTML, CSS y JavaScript vanilla para aprender desarrollo web.
+
+## 🌟 Juegos Incluidos
+
+### 1. 🧮 Calculadora Web
 Una calculadora simple y funcional construida con HTML, CSS y JavaScript vanilla.
 
-## 🌟 Características
+### 2. 💕 L'amour - Juego del Amor
+Un juego divertido e interactivo donde el botón "No" huye cada vez que intentas hacer click en él.
 
-- ✅ Operaciones básicas: suma, resta, multiplicación y división
-- ✅ Soporte para números decimales
-- ✅ Función de borrado carácter por carácter
-- ✅ Botón de limpieza total
-- ✅ Manejo de errores (división por cero, expresiones inválidas)
+### 3. 🏓 Ping Pong
+Un contador de puntos para partidas de ping pong con sistema de victoria personalizable.
 
-## 📁 Demo
+## 📁 Demos
 
 ![Demo Calculadora](./demo/demo_calculadora.png)
+![Demo L-amour](./demo/mi_bida.png)
+![Demo Ping-Pong](./demo/ping_pong.png)
 
 ## 🚀 Realizado por
 
